@@ -225,11 +225,16 @@ def search_song(event=None):
     
 #clear search bar
 def clear_search(event=None):
+    if hasattr(clear_search, "search_bar"):
+        clear_search.search_bar.destroy()
+
+    clear_search.search_bar = search_bar = customtkinter.CTkEntry(master=header_frame, bg_color="transparent", width=500, height=50, border_width=1, corner_radius=50, font=FONT_SEARCH_BAR, placeholder_text="What do you want to play?")
+    clear_search.search_bar.grid(row=0, column=0, padx=5, pady=5)
+    clear_search.search_bar.bind("<KeyRelease>", search_song)
+    
     clear_songlist()  
     update_songlist()
-    search_bar = customtkinter.CTkEntry(master=header_frame, bg_color="transparent", width=500, height=50, border_width=1, corner_radius=50, font=FONT_SEARCH_BAR, placeholder_text="What do you want to play?")
-    search_bar.grid(row=0, column=0, padx=5, pady=5)
-    search_bar.bind("<KeyRelease>", search_song)
+
 
 
 
