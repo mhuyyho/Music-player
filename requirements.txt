@@ -1,0 +1,11 @@
+﻿certifi==2024.8.30
+charset-normalizer==3.4.0
+customtkinter==5.2.2
+darkdetect==0.8.0
+idna==3.10
+mutagen==1.47.0
+packaging==24.2
+pillow==11.0.0
+pygame==2.6.1
+requests==2.32.3
+urllib3==2.2.3
